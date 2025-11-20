@@ -1,9 +1,31 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            groupId = 'org.example'
+            artifactId = 'itextpdfreport'  // Change to your app name
+            version = '1.0-SNAPSHOT'
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username = System.getenv("NEXUS_USERNAME")
+                password = System.getenv("NEXUS_PASSWORD")
+            }
+            // Use the repository name you just created
+            url = "http://localhost:8081/repository/myrepo/"
+        }
+    }
+}
 
 repositories {
     mavenCentral()

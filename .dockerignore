@@ -1,0 +1,11 @@
+.git
+.gradle
+build/*
+!build/libs/
+.idea/
+*.iml
+*.log
+target/
+node_modules/
+.DS_Store
+terraform/

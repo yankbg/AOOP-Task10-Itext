@@ -22,7 +22,7 @@ publishing {
                 password = System.getenv("NEXUS_PASSWORD")
             }
             // Use the repository name you just created
-            url = "https://localhost:8081/repository/myrepo/"
+            url = "http://localhost:8081/repository/myrepo/"
         }
     }
 }

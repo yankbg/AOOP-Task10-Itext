@@ -23,6 +23,7 @@ publishing {
             }
             // Use the repository name you just created
             url = "http://localhost:8081/repository/myrepo/"
+            allowInsecureProtocol = true
         }
     }
 }

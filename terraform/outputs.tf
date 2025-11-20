@@ -1,4 +1,12 @@
-output "instance_public_ip$END$" {
-  value       = ""                                          # The actual value to be outputted
-  description = "The public IP address of the EC2 instance" # Description of what this output represents
+output "deployment_time" {
+  description = "When infrastructure was deployed"
+  value       = timestamp()
+}
+
+output "files_created" {
+  description = "Files created by Terraform"
+  value = [
+    local_file.jenkins_test.filename,
+    local_file.app_config.filename
+  ]
 }

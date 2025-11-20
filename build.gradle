@@ -12,6 +12,11 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    // iText PDF library for PDF generation (use iText 5 or compatible)
+    implementation 'com.itextpdf:itextpdf:5.5.13.3'
+
+    // MySQL Connector for database connectivity (adjust for your DB)
+    implementation 'mysql:mysql-connector-java:8.0.32'
 }
 
 test {
